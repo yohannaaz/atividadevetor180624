@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERAÇÔES</title>
+</head>
+<body>
+    <h1>operacçoes com vetores</h1>
+    <div id="vetores"></div>
+    <button onclick="lervetores()">ler vetores de cídigos e quantidades</button>
+ 
+    <script>
+        const codigos = [];
+        const mercadorias = [];
+ 
+        function lervetores() {
+            for (let i = 0; i < 3; i++) {
+                let codigomercadoria = Number(prompt("Escrerva seu código da mercadoria:" + (i + 1)));
+                let quantidademercadoria = Number(prompt("Escreva a quantidade da mercadoria:" + (i =1)));
+                codigos.push(codigomercadoria);
+                mercadorias.push(quantidademercadoria);
+               
+            }
+        }
+ 
+        ordenarporquantidade();
+        exibircodigoquantidade();
+ 
+        function ordenarporquantidade() {
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < mercadorias.length; j++) {
+                    if (mercadorias[i] > mercadorias[i]){
+                        let tempoquantidade = mercadorias[i];
+                        mercadorias[j] = tempoquantidade;
+ 
+                        let tempocodigo = codigos[i];
+                        codigos[i] = codigos[j];
+                        codigos[j] = tempocodigo;
+                    }
+                   
+                }
+               
+            }
+        }
+ 
+        function exibircodigosquantidades(){
+            let vetoresHTML = "<h2> códigos e quantidades de ordens crescente de quantidade <h2><ul>"
+                for (let i = 0; i < codigos.length; i++) {
+                    vetoresHTML += "<li>códigos" + codigos[i] + "quantidade: " + mercadorias[i];
+                }
+                vetoresHTML += "</ul>"
+            document.getElementById('vetores').innerHTML = vetoresHTML;
+        }      
+       
+    </script>
+</body>
+</html>

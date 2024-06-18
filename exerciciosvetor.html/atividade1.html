@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números de Matriculas</title>
+</head>
+<body>
+    <h1>Número de Matriculas dos Alunos</h1>
+    <div id="listarmatriculas"></div>
+ 
+    <script>
+       
+        const matriculas = [];
+        let matricula = 0;
+        let opcao = prompt("Deseja cadastrar uma nova matricula \n [1] - Sim \n [2] - Não");
+        let nao = 0;
+ 
+        while (opcao == "1") {
+            matricula = prompt("Digite a nova matricula.");
+            for (let i = 0; i < 3; i++)
+              if(matricula == matriculas[i]){
+                nao++;
+            }
+            if(nao >0){
+                alert("matricula ja registrada.");
+                nao = 0;
+            }else{
+                matriculas.push(matricula);
+            }
+ 
+            opcao = prompt("Deseja cadastrar uma nova matricula \n [1] - Sim \n [2] - Não")
+        }
+        document.getElementById('listarmatriculas').innerHTML = matriculas
+       
+         
+    </script>
+   
+</body>
+</html>

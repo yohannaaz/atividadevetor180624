@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações com Vetores</title>
+</head>
+ 
+<body>
+    <h1>Operação com Vetores </h1>
+    <div id="vetores"></div>
+    <button onclick="lerVetores()"> Ler Vetores A e B</button>
+ 
+    <script>
+
+        //8. Leia os vetores A e B, com 100 números cada. Crie o vetor C, colocando em cada
+//posição dele o resultado da soma dos valores das posições correspondentes em A e B.
+//Crie o vetor D, colocando nele o resultado da multiplicação de A por B. Imprima os
+//valores armazenados no vetor C em ordem decrescente e os armazenados em D em
+//ordem crescente.
+
+        const vetorA = [];
+        const vetorB = [];
+        const vetorC = [];
+        const vetorD = [];
+ ////////////////////////////////////////////////////////
+
+        function lerVetores() {
+            for (let i = 0; i < 3; i++) {
+                vetorA[i] = Number(prompt("Digite o número ") + (i + 1) + " do Vetor A ");
+                vetorB[i] = Number(prompt("Digite o número ") + (i + 1) + " do Vetor B ");
+                vetorC[i] = vetorA[i] + vetorB[i];
+                vetorD[i] = vetorA[i] * vetorB[i];
+            }
+        }
+        //////////////////////////////////////////////////////////////////
+            ordernarVetor(vetorC, "decrescente");
+            ordernarVetor(vetorD, "crescente");
+            exibirVetores();
+//
+            function ordernarVetor(vetor, ordem){
+            for (let i = 0; i < vetor.length; i++) {
+                for (let j = 0; j < vetor.length - 1; j++) {
+                    if ((ordem == "crescente" && vetor[j] > vetor[j + 1]) ||
+                        (ordem == "decrescente" && vetor[j] < vetor[j + 1])) {
+                        let temp = vetor[j];
+                        vetor[j] = vetor[j + 1];
+                        vetor[j + 1] = temp;
+                    }
+                }
+            }
+        }
+//////////////////////////////////////////////////////////////////////////////
+ 
+        function exibirVetores() {
+            let vetoresHTML = "<h2>Vetor A </h2><ol>";
+            for (let i = 0; i < vetorA.length; i++){
+                vetoresHTML += "<li>" + vetorA[i] + "</li>";
+        }
+    
+        vetoresHTML += "<ol>";
+///////////////////////////////////////////////////////////////////////
+        function exibirVetores() {
+            let vetoresHTML = "<h2>Vetor B </h2><ol>";
+            for (let i = 0; i < vetorB.length; i++){
+                vetoresHTML += "<li>" + vetorB[i] + "</li>";
+        }
+    
+        vetoresHTML += "<ol>";
+ /////////////////////////////////////////////////////////////////////////
+        vetoresHTML += "<h2>Vetor C (A + B) em Ordem Decrescente<h2><ol>";
+        for (let i = 0; i < vetorC.length; i++) {
+            vetoresHTML += "<li>" + vetorC[i] + "</li>";
+        }
+        vetoresHTML += "</ol>";
+ 
+ /////////////////////////////////////////////////////////////////////////////
+        vetoresHTML += "<h2>Vetor D (A * B) em Ordem Crescente<h2><ol>";
+        for (let i = 0; i < vetorD.length; i++) {
+            vetoresHTML += "<li>" + vetorD[i] + "</li>";
+        }
+        vetoresHTML += "</ol>";
+ 
+         
+        document.getElementById("vetores").innerHTML = vetoresHTML
+        }
+    }
+    </script>
+</body>
+ 
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+</head>
+<body>
+    <h1>Lista de compras</h1>
+    <div id= "itens"></div>
+    <button onclick="additens()"> Adicionar Itens</button>
+    <button onclick="deleteultimo()">Deletar o ultimo item</button>
+    <button onclick="alteraritens()"> Alterar itens </button>
+    <button onclick="deleteopcao()">Escolher o item para deletar</button>
+
+
+    <script>
+        const itenslista= [ "vinagre", "sabonete"];
+        exibiritens();
+
+//
+
+    function additens(){
+        let escolhacompra= prompt("digite o item que deseja comprar")
+        itenslista.push(escolhacompra);
+        exibiritens();
+    }
+
+    function exibiritens(){
+        itensHtml="<ol>";
+            for(let i= 0; i< itenslista.length; i++){
+                itensHtml+= "<li>"+itenslista[i]+ "</li>"
+            }
+         itensHtml+= "</ol>";
+         document.getElementById("itens").innerHTML= itensHtml;
+    }
+
+    function deleteultimo(){
+    itenslista.pop();
+    exibiritens();   
+
+    }
+
+    function alteraritens(){
+    let itemalterar= prompt( "qual item deseja alterar?")
+    let itemnovo= prompt ("digite o novo item")
+    itenslista[itemalterar-1]= itemnovo
+    exibiritens();
+    }
+
+    function deleteopcao(){
+    let selecionar= prompt("Digite o número do item que deseja alterar")
+    itenslista[selecionar-1]=itenslista.pop();
+    exibiritens();
+    }
+    </script>
+</body>
+</html>

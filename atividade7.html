@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem Decrescente</title>
+</head>
+<body>
+    <h1>Números em ordem Decrescente</h1>
+    <div id="vetornumero"></div>
+ 
+    <script>
+        const numeros = [];
+        const armazenar =[];
+        function lervetor() {
+            for (let i = 0; i < 5; i++) {
+                let numero = Number(prompt("digite o número"));
+                armazenar.push(numero)
+                numeros.push(numero * 7);
+               
+            }
+        }
+        function exibirnumero() {
+            for (let i = 0; i < numeros.length; i++) {
+                for (let j = 0; j < numeros.length; j++) {
+                    if (numeros[i] < numeros[j]) {
+                        let decrescente = numeros[i];
+                        numeros[i] = numeros[j];
+                        numeros[j] = numeros[i];
+                    }
+                   
+                }
+               
+            }
+        }
+        let resultado = "Números digitados";
+        for (let i = 0; i < numeros.length; i++) {
+            const element = array[i];
+            resultado += "<br>" + numeros[i] + "<br>";
+        }
+        resultado += "<p>Números multiplicados por 7 em ordem decrescente:</p>"
+        for (let i = 0; i < numeros.length; i++) {
+            resultado += "</br>" + numeros[i] + "</br>"
+           
+        }
+        document.getElementById('vetornumero').innerHTML = resultado;
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operação com vetores</title>
+</head>
+<body>
+    <h1>Oprerações com Vetores</h1>
+    <div id="vetores"></div>
+    <button onclick="lervetores()">Ler vetores A e B</button>
+    <script>
+        const vetorA =[];
+        const vetorB =[];
+        const vetorC =[];
+        const vetorD =[];
+ 
+        function lervetores() {
+            for (let i = 0; i < 3; i++) {
+                vetorA[i] = Number(prompt("Digite o número" + (i + 1) + "do vetor A"));
+                vetorB[i] = Number(prompt("Digite o número" + (i + 1) + "do vetor B"));
+                vetorC[i] = vetorA[i] + vetorB[i];
+                vetorD[i] = vetorA[i] * vetorB[i];
+            }
+        }
+            ordernarVetor(vetorC, "decrescente");
+            ordernarVetor(vetorD, "crescente");
+            exibirVetores();
+ 
+            function ordernarVetor(vetor, ordem){}
+            for (let i = 0; i < vetor.length; i++) {
+                for (let j = 0; j < vetor.length - 1; j++) {
+                    if ((ordem == "crescente" && vetor[j] > vetor[j + 1]) ||
+                        (ordem == "decrescente" && vetor[j] < vetor[j + 1])) {
+                        let temp = vetor[j];
+                        vetor[j] = vetor[j + 1];
+                        vetor[j + 1] = temp;
+                    }
+                }
+            }
+ 
+        function exibirVetores() {
+            let vetoresHTML = "<h2>Vetor A </h2><ol>";
+                for (let i = 0; i < vetorA.length; i++){
+                vetoresHTML += "<li>" + vetorA[i] + "</li>";
+            }
+             vetoresHTML += "<ol>";
+             vetoresHTML += "<h2>Vetor B </h2><ol>";
+                for (let i = 0; i < vetorB.length; i++){
+             vetoresHTML += "<li>" + vetorB[i] + "</li>";
+            }
+             vetoresHTML += "<ol>";
+             vetoresHTML += "<h2>Vetor C (A + B) em Ordem Decrescente<h2><ol>";
+                for (let i = 0; i < vetorC.length; i++) {
+             vetoresHTML += "<li>" + vetorC[i] + "</li>";
+            }
+             vetoresHTML += "</ol>";
+             vetoresHTML += "<h2>Vetor C (A * B) em Ordem Crescente<h2><ol>";
+                for (let i = 0; i < vetorD.length; i++) {
+             vetoresHTML += "<li>" + vetorC[i] + "</li>";
+            }
+             vetoresHTML += "</ol>";
+ 
+         
+ 
+            document.getElementById("vetores").innerHTML = vetoresHTML;
+        }
+   
+    </script>
+</body>
+ 
+</html>
+    </script>
+</body>
+</html>

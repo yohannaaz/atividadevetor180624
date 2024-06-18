@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Vetores</title>
+</head>
+<body>
+    <div id="resultado"></div>
+    <script>
+        //let nomealuno1 = "Maria";
+        //let nomealuno2 = "Mariana";
+        //let nomealuno3 = "Mariluz";
+        //let nomealuno4 = "Mariaclid";
+        //let nomealuno5 = "Marianoite";
+        //let nomealuno6 = "Mariazinha";
+ 
+       
+ 
+        const nomealuno = ["Maria", "Mariana", "Mariluz", "Mariaclid", "Marinoite", "Mariazinha"];
+       
+       
+        //const nomealuno2 = new Array();
+        document.getElementById('resultado').innerHTML += nomealuno + "</br>";
+       
+        nomealuno[1] = "João";
+ 
+        document.getElementById('resultado').innerHTML += nomealuno;
+ 
+        let numItensArray = nomealuno.length;
+        document.getElementById('resultado').innerHTML += "</br> Itens da minha Array:" + numItensArray;
+ 
+        let mostrar = nomealuno[nomealuno.length -2];
+        document.getElementById('resultado').innerHTML += "</br> Mostrar nome:" + mostrar;
+ 
+        tagHtmla = "<ul>";
+        for (let i = 0; i< nomealuno.length; i++) {
+            tagHtmla += "<li>" + nomealuno[i] + "</li>";
+           
+        }
+        tagHtmla += "</ul>";
+ 
+        document.getElementById('resultado').innerHTML += tagHtmla;
+ 
+    </script>
+</body>
+</html>

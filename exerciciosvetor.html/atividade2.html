@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem inversa</title>
+</head>
+<body>
+    <h1>Leitura dos números na ordem inversa!</h1>
+    <div id="numeros"></div>
+    <button onclick="ler200numeros()">Ler Números</button>
+ 
+    <script>
+        const numeros = [];
+ 
+        function ler200numeros() {
+            for (let i = 0; i < 5; i++) {
+                let numero = prompt("digite o numero" + (i+1));
+                numeros.push(numero);
+               
+            }
+            exibirnumerosinverso();
+ 
+        }
+ 
+        function exibirnumerosinverso() {
+            let numerosHtml = "<ol>"
+                for (let i = numeros.length-1; i >= 0; i--) {
+                    numerosHtml += "<li>" + numeros[i] + "</li>";
+                   
+                }
+                numerosHtml += "</ol>"
+            document.getElementById('numeros').innerHTML = numerosHtml;  
+        }
+ 
+       
+    </script>
+</body>
+</html>

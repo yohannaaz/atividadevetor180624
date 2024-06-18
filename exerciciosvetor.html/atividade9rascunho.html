@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        9. Considere dois vetores: PROFESSOR, contendo 100 nomes de professores de uma
+        faculdade, e TEMPOPROFISSAO, contendo o tempo de atuação de cada um. Para
+        cada nome do vetor PROFESSOR há, na mesma posição do vetor
+        TEMPOPROFISSAO, o respectivo valor do tempo de atuação. Imprima os nomes dos
+        professores contidos nesse vetor seguindo a ordem decrescente do tempo de profissão.</h1>
+ 
+    <div id="dadosprofessores"></div>
+
+    <button onclick="ler100dados()">Ler nomes dos professores e Tempo de profissão de cada</button>
+
+    <script>
+        const dadosprofessores= []
+
+        function ler100dados(){
+            for(let quantidadedados= 0; quantidadedados< 5; quantidadedados++){
+
+            let nomeprof= prompt("Digite o nome do professor"+ (quantidadedados+1))
+            let tempoprof= prompt("Digite o Tempo de profissão"+ (quantidadedados+1))
+
+            dadosprofessores.push(nomeprof+ " -|-  " + tempoprof)
+        }
+
+        document.getElementById("dadosprofessores").innerHTML=dadosprofessores
+
+    }
+
+
+   
+    
+    </script>
+</body>
+</html>

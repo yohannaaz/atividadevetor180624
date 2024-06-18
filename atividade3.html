@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores de 50 números com multiplicação por 3</title>
+</head>
+<body>
+    <h1></h1>
+    <div id="tudo"></div>
+ 
+    <script>
+        const numeros =[];
+        let numero
+        const multiplicacao = [];
+ 
+        for(i = 0; i < 3; i++){
+            numero = prompt("digite os números.");
+            numeros.push(numero);
+            multiplicacao.push(numeros[i] * 3);
+ 
+        }
+ 
+        document.getElementById('tudo').innerHTML = "Números: " + numeros + "<br>Números multiplicados por tres: " + multiplicacao;
+    </script>
+</body>
+</html>

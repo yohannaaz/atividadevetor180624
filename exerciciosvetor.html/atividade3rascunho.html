@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Leia um vetor de 50 números e monte outro vetor com os valores do primeiro
+        multiplicados por 3</title>
+
+</head>
+<body>
+
+    <h1>3. Leia um vetor de 50 números e monte outro vetor com os valores do primeiro
+        multiplicados por 3</h1> 
+        
+        <div id= "lernumeros"></div>
+        <div id= "multiplicarpor3"></div>
+
+        <button onclick="lernumeros()">Ler Números</button>
+        <button onclick="multiplicarpor3()">Ler Números e multiplicar cada um por 3</button>
+
+        <script>
+
+        const lernumeros= []
+        
+
+        //
+
+        function lernumeros(){
+         for(let quantidadenumeros=0; quantidadenumeros<5; quantidadenumeros++){
+        
+         let numeros = Number(prompt("Digite o número"+ (quantidadenumeros+1)))
+
+         lernumeros.push(numeros)
+
+        }
+       document.getElementById("lernumeros")= "lernumeros"
+            
+        }
+        
+    //
+
+    const multiplicarpor3=[]
+
+
+        function multiplicarpor3(){
+        for(let quantidadeoperacao=0; quantidadeoperacao<5; quantidadeoperacao++){
+         let multiplicacao = numeros*3
+
+        multiplicarpor3.push(multiplicacao)
+        
+        }
+        document.getElementById("multiplicarpor3")= "multiplicarpor3"
+    }
+        </script>
+
+
+</body>
+</html>

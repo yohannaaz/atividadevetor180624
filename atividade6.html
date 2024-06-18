@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>atividade 6</h1>
+ <p id="resultado"></p>
+ 
+  <script>
+ 
+const numeros = []
+ 
+for (let a = 0; a < 3; a++) {
+ let inserir = Number(prompt("Digite os numeros"))
+ numeros.push(inserir)
+}
+for (let i = 0; i < numeros.length; i++) {
+  for (let j = i ; j < numeros.length; j++) {
+    if (numeros[i] > numeros[j]) {
+      [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
+    }
+  }
+}
+document.getElementById("resultado").innerHTML = "Ordem crescente: " + numeros
+   
+  </script>
+ 
+ 
+</body>
+</html>
